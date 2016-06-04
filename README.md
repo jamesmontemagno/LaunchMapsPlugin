@@ -7,6 +7,8 @@ Open external maps to a specific geolocation or address in your Xamarin.iOS, Xam
 * Available on NuGet: https://www.nuget.org/packages/Xam.Plugin.ExternalMaps [![NuGet](https://img.shields.io/nuget/v/Xam.Plugin.ExternalMaps.svg?label=NuGet)](https://www.nuget.org/packages/Xam.Plugin.ExternalMaps/)
 * Install into your PCL project and Client projects.
 
+Build status: [![Build status](https://ci.appveyor.com/api/projects/status/vpw3xi2qlr41wueo?svg=true)](https://ci.appveyor.com/project/JamesMontemagno/launchmapsplugin)
+
 **Platform Support**
 
 |Platform|Supported|Version|
