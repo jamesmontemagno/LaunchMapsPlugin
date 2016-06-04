@@ -1,6 +1,6 @@
-## ![](Common/external_map_icon.png)External Maps for Xamarin and Windows
+## Launch Maps Plugin for Xamarin and Windows
 
-  Open external maps to a specific geolocation or address. Option to launch with navigation option on iOS as well.
+Open external maps to a specific geolocation or address in your Xamarin.iOS, Xamarin.Android, Windows, and Xamarin.Forms projects.
        
 
 #### Setup
@@ -55,15 +55,16 @@ var success = await CrossExternalMaps.Current.NavigateTo("Space Needle", 47.6204
 ```     
 
 
-**Quirks**
+**Platform Tweaks**
 * NavigationType only works on iOS and Windows Phone Silverlight (geolocation only). 
 * Android will try to launch Google Maps first. If it is not installed then it will ask to see if a map apps is installed. If that doesn't work then it will launch the browser.
 * Windows Phone Silverlight: Will attempt to launch external maps app for walk/drive, else launches bing maps.
 
-#### Contributors
-* [jamesmontemagno](https://github.com/jamesmontemagno)
+#### Contributions
+Contributions are welcome! If you find a bug please report it and if you want a feature please report it.
 
-Thanks!
+If you want to contribute code please file an issue and create a branch off of the current dev branch and file a pull request.
 
 #### License
-Licensed under main repo license
+Under MIT, see LICENSE file.
+
