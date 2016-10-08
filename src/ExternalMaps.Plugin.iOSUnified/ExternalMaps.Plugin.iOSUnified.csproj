@@ -35,12 +35,10 @@
     <DocumentationFile>bin\iPhone\Release\Plugin.ExternalMaps.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\ExternalMaps.Plugin.iOS\ExternalMapsImplementation.cs">
-      <Link>ExternalMapsImplementation.cs</Link>
-    </Compile>
     <Compile Include="..\ExternalMaps.Plugin\CrossExternalMaps.cs">
       <Link>CrossExternalMaps.cs</Link>
     </Compile>
+    <Compile Include="ExternalMapsImplementation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
