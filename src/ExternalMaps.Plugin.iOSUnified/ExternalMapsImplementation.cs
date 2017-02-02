@@ -146,6 +146,7 @@ namespace Plugin.ExternalMaps
             catch(Exception ex)
             {
                 Debug.WriteLine("Unable to launch maps: " + ex);
+                return false;
             }
 
             return true;
