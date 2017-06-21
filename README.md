@@ -12,15 +12,11 @@ Build status: [![Build status](https://ci.appveyor.com/api/projects/status/vpw3x
 **Platform Support**
 
 |Platform|Supported|Version|
-| ------------------- | :-----------: | :------------------: |
-|Xamarin.iOS|Yes|iOS 7+|
-|Xamarin.iOS Unified|Yes|iOS 7+|
-|Xamarin.Android|Yes|API 10+|
-|Windows Phone Silverlight|Yes|8.0+|
-|Windows Phone RT|Yes|8.1+|
-|Windows Store RT|Yes|8.1+|
-|Windows 10 UWP|Yes|10+|
-|Xamarin.Mac|No||
+| ------------------- | :------------------: |
+|Xamarin.iOS|iOS 7+|
+|Xamarin.Android|API 10+|
+|Windows 10 UWP|10+|
+|Xamarin.Mac|Yes||
 
 #### Usage
 There are two methods that you can call to navigate either with the geolocation lat/long or with a full address to go to.
@@ -58,9 +54,8 @@ var success = await CrossExternalMaps.Current.NavigateTo("Space Needle", 47.6204
 
 
 **Platform Tweaks**
-* NavigationType only works on iOS and Windows Phone Silverlight (geolocation only). 
+* NavigationType only works on iOS and macOS
 * Android will try to launch Google Maps first. If it is not installed then it will ask to see if a map apps is installed. If that doesn't work then it will launch the browser.
-* Windows Phone Silverlight: Will attempt to launch external maps app for walk/drive, else launches bing maps.
 
 #### Contributions
 Contributions are welcome! If you find a bug please report it and if you want a feature please report it.

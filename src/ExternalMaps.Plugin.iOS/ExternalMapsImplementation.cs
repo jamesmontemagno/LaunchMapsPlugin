@@ -1,13 +1,7 @@
 using Plugin.ExternalMaps.Abstractions;
-#if __UNIFIED__
 using CoreLocation;
 using Foundation;
 using MapKit;
-#else
-using MonoTouch.CoreLocation;
-using MonoTouch.Foundation;
-using MonoTouch.MapKit;
-#endif
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
@@ -35,11 +29,13 @@ namespace Plugin.ExternalMaps
             {
 
                 NSDictionary dictionary = null;
-                var mapItem = new MKMapItem(new MKPlacemark(new CLLocationCoordinate2D(latitude, longitude), dictionary));
-                mapItem.Name = name;
+				var mapItem = new MKMapItem(new MKPlacemark(new CLLocationCoordinate2D(latitude, longitude), dictionary))
+				{
+					Name = name
+				};
 
-                MKLaunchOptions launchOptions = null;
-                if (navigationType != NavigationType.Default)
+				MKLaunchOptions launchOptions = null;
+				if (navigationType != NavigationType.Default)
                 {
                     launchOptions = new MKLaunchOptions
                     {
@@ -47,7 +43,7 @@ namespace Plugin.ExternalMaps
                     };
                 }
 
-                var mapItems = new[] { mapItem };
+				var mapItems = new[] { mapItem };
                 MKMapItem.OpenMaps(mapItems, launchOptions);
                 return Task.FromResult(true);
             }
@@ -95,10 +91,15 @@ namespace Plugin.ExternalMaps
 
 
             CLPlacemark[] placemarks = null;
-            MKPlacemarkAddress placemarkAddress = null;
-            try
+#if __IOS__
+			MKPlacemarkAddress placemarkAddress = null;
+#elif MAC
+			NSDictionary placemarkAddress = null;
+#endif
+			try
             {
-                placemarkAddress = new MKPlacemarkAddress
+#if __IOS__
+				placemarkAddress = new MKPlacemarkAddress
                 {
                     City = city,
                     Country = country,
@@ -107,12 +108,27 @@ namespace Plugin.ExternalMaps
                     Zip = zip,
                     CountryCode = countryCode
                 };
+#elif MAC
+				placemarkAddress = new NSDictionary
+				{
+					[Contacts.CNPostalAddressKey.City] = new NSString(city),
+					[Contacts.CNPostalAddressKey.Country] = new NSString(country),
+					[Contacts.CNPostalAddressKey.State] = new NSString(state),
+					[Contacts.CNPostalAddressKey.Street] = new NSString(street),
+					[Contacts.CNPostalAddressKey.PostalCode] = new NSString(zip),
+					[Contacts.CNPostalAddressKey.IsoCountryCode] = new NSString(countryCode)
+				};
+#endif
 
-                var coder = new CLGeocoder();
-                
-                placemarks = await coder.GeocodeAddressAsync(placemarkAddress.Dictionary);
-            }
-            catch (Exception ex)
+				var coder = new CLGeocoder();
+
+#if __IOS__
+				placemarks = await coder.GeocodeAddressAsync(placemarkAddress.Dictionary);
+#elif MAC
+				placemarks = await coder.GeocodeAddressAsync(placemarkAddress);
+#endif
+			}
+			catch (Exception ex)
             {
                 Debug.WriteLine("Unable to get geocode address from address: " + ex);
                 return false;
@@ -127,11 +143,14 @@ namespace Plugin.ExternalMaps
             try
             {
                 var placemark = placemarks[0];
+				var mkPlacemark = new MKPlacemark(placemark.Location.Coordinate, placemarkAddress);
 
-                var mapItem = new MKMapItem(new MKPlacemark(placemark.Location.Coordinate, placemarkAddress));
-                mapItem.Name = name;
+				var mapItem = new MKMapItem(mkPlacemark)
+				{
+					Name = name
+				};
 
-                MKLaunchOptions launchOptions = null;
+				MKLaunchOptions launchOptions = null;
                 if (navigationType != NavigationType.Default)
                 {
                     launchOptions = new MKLaunchOptions
@@ -151,5 +170,7 @@ namespace Plugin.ExternalMaps
 
             return true;
         }
+
+
     }
 }

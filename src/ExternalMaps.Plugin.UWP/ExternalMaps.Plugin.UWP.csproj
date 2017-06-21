@@ -109,18 +109,18 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\ExternalMaps.Plugin.WindowsStore\ExternalMapsImplementation.cs">
-      <Link>ExternalMapsImplementation.cs</Link>
-    </Compile>
     <Compile Include="..\ExternalMaps.Plugin\CrossExternalMaps.cs">
       <Link>CrossExternalMaps.cs</Link>
     </Compile>
+    <Compile Include="ExternalMapsImplementation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="Properties\Plugin.ExternalMaps.rd.xml" />
+    <EmbeddedResource Include="Properties\Plugin.ExternalMaps.rd.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ExternalMaps.Plugin.Abstractions\ExternalMaps.Plugin.Abstractions.csproj">
-      <Project>{6edb0588-ffc5-4ef5-8a99-9e241d0f878d}</Project>
+      <Project>{0250a664-9242-49e5-a6f7-3e715a2752cf}</Project>
       <Name>ExternalMaps.Plugin.Abstractions</Name>
     </ProjectReference>
   </ItemGroup>
