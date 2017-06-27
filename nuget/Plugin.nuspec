@@ -46,7 +46,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="nuget\readme.txt" target="readme.txt" />
     <!--Core-->
     <file src="src\ExternalMaps.Plugin\bin\Release\netstandard1.0\Plugin.ExternalMaps.*" target="lib\netstandard1.0" />
 
