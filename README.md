@@ -17,6 +17,7 @@ Build status: [![Build status](https://ci.appveyor.com/api/projects/status/vpw3x
 |Xamarin.Android|API 10+|
 |Windows 10 UWP|10+|
 |Xamarin.Mac|Yes||
+|Tizen|Yes|4.0+|
 
 #### Usage
 There are two methods that you can call to navigate either with the geolocation lat/long or with a full address to go to.
@@ -56,6 +57,18 @@ var success = await CrossExternalMaps.Current.NavigateTo("Space Needle", 47.6204
 **Platform Tweaks**
 * NavigationType only works on iOS and macOS
 * Android will try to launch Google Maps first. If it is not installed then it will ask to see if a map apps is installed. If that doesn't work then it will launch the browser.
+* Tizen to use userdialogs plugin(https://github.com/aritchie/userdialogs).
+
+  Tizen Initialization (In your OnCreate function)
+```csharp
+protected override void OnCreate()
+{
+    base.OnCreate();
+    UserDialogs.Init(this.MainWindow);
+    LoadApplication(new App());
+}
+```
+
 
 #### Contributions
 Contributions are welcome! If you find a bug please report it and if you want a feature please report it.

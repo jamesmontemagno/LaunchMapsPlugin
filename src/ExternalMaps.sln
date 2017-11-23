@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalMaps.Plugin.iOS", "ExternalMaps.Plugin.iOS\ExternalMaps.Plugin.iOS.csproj", "{2882AEEB-D4CD-4EB9-8A6C-6653B33681F0}"
 EndProject
@@ -25,6 +25,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalMaps.Plugin", "ExternalMaps.Plugin\ExternalMaps.Plugin.csproj", "{0D0B6005-62BB-4D1F-AD22-485EB2C1CAA9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalMaps.Plugin.Abstractions", "ExternalMaps.Plugin.Abstractions\ExternalMaps.Plugin.Abstractions.csproj", "{0250A664-9242-49E5-A6F7-3E715A2752CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalMaps.Plugin.Tizen", "ExternalMaps.Plugin.Tizen\ExternalMaps.Plugin.Tizen.csproj", "{B9DF09C7-B8E2-473A-9FA6-083B3CDD1DB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -122,8 +124,27 @@ Global
 		{0250A664-9242-49E5-A6F7-3E715A2752CF}.Release|x64.Build.0 = Release|Any CPU
 		{0250A664-9242-49E5-A6F7-3E715A2752CF}.Release|x86.ActiveCfg = Release|Any CPU
 		{0250A664-9242-49E5-A6F7-3E715A2752CF}.Release|x86.Build.0 = Release|Any CPU
+		{B9DF09C7-B8E2-473A-9FA6-083B3CDD1DB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9DF09C7-B8E2-473A-9FA6-083B3CDD1DB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9DF09C7-B8E2-473A-9FA6-083B3CDD1DB6}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{B9DF09C7-B8E2-473A-9FA6-083B3CDD1DB6}.Debug|ARM.Build.0 = Debug|Any CPU
+		{B9DF09C7-B8E2-473A-9FA6-083B3CDD1DB6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B9DF09C7-B8E2-473A-9FA6-083B3CDD1DB6}.Debug|x64.Build.0 = Debug|Any CPU
+		{B9DF09C7-B8E2-473A-9FA6-083B3CDD1DB6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B9DF09C7-B8E2-473A-9FA6-083B3CDD1DB6}.Debug|x86.Build.0 = Debug|Any CPU
+		{B9DF09C7-B8E2-473A-9FA6-083B3CDD1DB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9DF09C7-B8E2-473A-9FA6-083B3CDD1DB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9DF09C7-B8E2-473A-9FA6-083B3CDD1DB6}.Release|ARM.ActiveCfg = Release|Any CPU
+		{B9DF09C7-B8E2-473A-9FA6-083B3CDD1DB6}.Release|ARM.Build.0 = Release|Any CPU
+		{B9DF09C7-B8E2-473A-9FA6-083B3CDD1DB6}.Release|x64.ActiveCfg = Release|Any CPU
+		{B9DF09C7-B8E2-473A-9FA6-083B3CDD1DB6}.Release|x64.Build.0 = Release|Any CPU
+		{B9DF09C7-B8E2-473A-9FA6-083B3CDD1DB6}.Release|x86.ActiveCfg = Release|Any CPU
+		{B9DF09C7-B8E2-473A-9FA6-083B3CDD1DB6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CDB39490-E141-4B7E-808D-5BD4C1F5C581}
 	EndGlobalSection
 EndGlobal

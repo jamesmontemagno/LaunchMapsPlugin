@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Property Group for Tizen Project -->
+  <PropertyGroup>
+    <TargetFramework>tizen40</TargetFramework>
+    <TizenCreateTpkOnBuild>false</TizenCreateTpkOnBuild>
+    <AssemblyName>Plugin.ExternalMaps</AssemblyName>
+    <RootNamespace>Plugin.ExternalMaps</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>None</DebugType>
+  </PropertyGroup>
+
+  <!-- Include Nuget Package for Tizen Project building -->
+  <ItemGroup>
+    <PackageReference Include="Acr.UserDialogs" Version="7.0.0" />
+    <PackageReference Include="Tizen.NET" Version="4.0.0">
+      <ExcludeAssets>Runtime</ExcludeAssets>
+    </PackageReference>
+    <PackageReference Include="Tizen.NET.Sdk" Version="1.0.0" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="2.4.0.18342" />
+    <PackageReference Include="Xamarin.Forms.Platform.Tizen" Version="2.4.0.18342" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\ExternalMaps.Plugin\CrossExternalMaps.cs">
+      <Link>CrossExternalMaps.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExternalMaps.Plugin.Abstractions\ExternalMaps.Plugin.Abstractions.csproj">
+      <Project>{0250a664-9242-49e5-a6f7-3e715a2752cf}</Project>
+      <Name>ExternalMaps.Plugin.Abstractions</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

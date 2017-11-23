@@ -14,7 +14,7 @@
       Open external maps to navigate to a specific geolocation or address. Option to launch with navigation option on iOS as well.
     </description>
     <summary>Open external maps to navigate to a specific geolocation or address.</summary>
-    <tags>xamarin, pcl, xam.pcl, maps, navigation, external maps, windows phone, winphone, wp8, winrt, android, xamarin.forms, ios</tags>
+    <tags>xamarin, pcl, xam.pcl, maps, navigation, external maps, windows phone, winphone, wp8, winrt, android, xamarin.forms, ios, tizen</tags>
     <dependencies>
       <group targetFramework="net">
       </group>
@@ -43,6 +43,8 @@
       </group>
       <group targetFramework="xamarinwatchos">
       </group>
+      <group targetFramework="tizen">
+      </group>
     </dependencies>
   </metadata>
   <files>
@@ -59,7 +61,8 @@
     <file src="src\ExternalMaps.Plugin.UWP\bin\Release\Plugin.ExternalMaps.*" target="lib\UAP10" />
     <!--Xamarin.Mac-->
     <file src="src\ExternalMaps.Plugin.Mac\bin\Release\Plugin.ExternalMaps.*" target="lib\Xamarin.Mac20" />
-
+    <!--Tizen-->
+    <file src="src\ExternalMaps.Plugin.Tizen\bin\Release\tizen40\Plugin.ExternalMaps.*" target="lib\tizen40" />
 
   </files>
 </package>
