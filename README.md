@@ -12,7 +12,7 @@ Build status: [![Build status](https://ci.appveyor.com/api/projects/status/vpw3x
 **Platform Support**
 
 |Platform|Supported|Version|
-| ------------------- | :------------------: |
+| ------------------- | :------------------: | --- |
 |Xamarin.iOS|iOS 7+|
 |Xamarin.Android|API 10+|
 |Windows 10 UWP|10+|
